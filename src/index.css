@@ -1,3 +1,22 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+span {
+  display: inline-block;
+}
+
+span::after {
+  display: block;
+  content: "";
+  border-bottom: solid 3px #6e5de7;
+  transform: scaleX(0);
+  transition: transform 250ms ease-in-out;
+}
+span:hover::after {
+  transform: scale(1);
+}
+
+span.fromLeft::after {
+  transform-origin: 0% 50%;
+}
